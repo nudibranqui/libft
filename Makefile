@@ -6,7 +6,7 @@
 #    By: aurue-lo <aurue-lo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/19 12:50:39 by aurue-lo          #+#    #+#              #
-#    Updated: 2023/06/12 14:57:30 by aurue-lo         ###   ########.fr        #
+#    Updated: 2023/06/12 15:09:40 by aurue-lo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ dir:
 	-mkdir $(D_OBJ)
 $(D_OBJ)/%.o: %.c
 	$(CC) -MMD $(CFLAGS) -c $< -o $@
-	printf "$C$(ligth)Compiling libft\n$E"
+	printf "$(B)\rCompiling: $(P)$(notdir $<)...			$(E)\r"
 $(NAME):	$(OBJ)
 	$(AR) $(NAME) $(OBJ)
 	touch $(NAME)
@@ -75,5 +75,3 @@ clean:
 # -f perque son carpetes
 re: fclean all
 .SILENT:
-
-
